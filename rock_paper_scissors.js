@@ -47,4 +47,17 @@ function playRound(computerChoice, humanChoice) {
 }
 
 let humanScore = 0, computerScore = 0;
-result = playRound(getComputerChoice(), getHumanChoice());
+
+function playGame() {
+    for (let i = 0; i < 5; i++) {
+        let result = playRound(getComputerChoice(), getHumanChoice());
+        if (result === 1) {
+            humanScore += 1;
+        } else if (result === 0) {
+            computerScore += 1;
+        }
+        console.log("Human score: " + humanScore + " and Computer Score: " + computerScore);
+    }
+}
+
+playGame();
