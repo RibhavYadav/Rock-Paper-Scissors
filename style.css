@@ -1,0 +1,29 @@
+body {
+    font-family: Inter, "Helvetica Neue", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 12px;
+    padding: 8px;
+    background: white;
+}
+
+.choice-container {
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 12px;
+    width: 600px;
+    height: 200px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+    font-size: 36px;
+    font-weight: bold;
+}
+
