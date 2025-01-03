@@ -53,6 +53,17 @@ button:active {
     box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+.round-result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 300px;
+    height: 24px;
+    border-radius: 6px;
+    font-size: 18px;
+}
+
 .score-container {
     display: flex;
     justify-content: center;
