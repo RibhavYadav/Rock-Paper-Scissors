@@ -1,3 +1,13 @@
+let humanChoice;
+const choices = document.querySelectorAll(".choice button");
+
+choices.forEach(button => {
+    button.addEventListener('click', (event) => {
+        humanChoice = event.target.textContent;
+        playRound(getComputerChoice(), humanChoice.toLowerCase());
+    });
+});
+
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3)
     switch (choice) {
@@ -10,53 +20,39 @@ function getComputerChoice() {
     }
 }
 
-function getHumanChoice() {
-    return prompt("Rock, paper or scissors?").toLowerCase();
-}
-
 function playRound(computerChoice, humanChoice) {
+    const result = document.getElementById("round-result");
     if (computerChoice === humanChoice) {
-        console.log("Draw!");
+        result.textContent = "Draw";
         return -1;
     }
     if (computerChoice === "rock") {
         if (humanChoice === "scissors") {
-            console.log("Computer wins the round!");
+            result.textContent = "Computer wins the round!"
             return 0;
         } else if (humanChoice === "paper") {
-            console.log("Player wins the round!");
+            result.textContent = "Player wins the round!"
             return 1;
         }
     } else if (computerChoice === "paper") {
         if (humanChoice === "scissors") {
-            console.log("Player wins the round!");
+            result.textContent = "Player wins the round!"
             return 1;
         } else if (humanChoice === "rock") {
-            console.log("Computer wins the round!");
+            result.textContent = "Computer wins the round!"
             return 0;
         }
     } else {
         if (humanChoice === "rock") {
-            console.log("Player wins the round!");
+            result.textContent = "Player wins the round!"
             return 1;
         } else if (humanChoice === "paper") {
-            console.log("Computer wins the round!");
+            result.textContent = "Computer wins the round!"
             return 0;
         }
     }
 }
 
-let humanScore = 0, computerScore = 0;
 
-function playGame() {
-    for (let i = 0; i < 5; i++) {
-        let result = playRound(getComputerChoice(), getHumanChoice());
-        if (result === 1) {
-            humanScore += 1;
-        } else if (result === 0) {
-            computerScore += 1;
-        }
-        console.log("Human score: " + humanScore + " and Computer Score: " + computerScore);
-    }
-}
+
 
